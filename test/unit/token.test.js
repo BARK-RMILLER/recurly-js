@@ -9,7 +9,7 @@ import { applyFixtures } from './support/fixtures';
 import { initRecurly, apiTest, testBed } from './support/helpers';
 
 apiTest(requestMethod => {
-  describe(`Recurly.token (${requestMethod})`, function () {
+  describe.only(`Recurly.token (${requestMethod})`, function () {
     // Some of these tests can take a while to stand up fields and receive reponses
     this.timeout(15000);
 
@@ -48,7 +48,7 @@ apiTest(requestMethod => {
 
       this.ctx.fixture = 'minimal';
 
-      describe('when called with a plain object', function () {
+      describe.only('when called with a plain object', function () {
         tokenSuite(plainObjectBuilder);
       });
 

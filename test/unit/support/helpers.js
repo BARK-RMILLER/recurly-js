@@ -28,7 +28,7 @@ export function initRecurly (recurly, opts) {
 
 export function apiTest (suite) {
   suite('cors');
-  suite('jsonp');
+  // suite('jsonp');
 }
 
 export function testBed () {
