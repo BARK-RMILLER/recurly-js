@@ -17,7 +17,9 @@ exports.config = Object.assign({
   runner: 'local',
   path: '/',
   specs: [
-    './test/e2e/**/*.test.js'
+    // './test/e2e/**/*.test.js',
+    // './test/e2e/recurly.test.js',
+    './test/e2e/behavior.tabbing.test.js'
   ],
   maxInstances: maxInstances(),
   capabilities: capabilities(),

@@ -17,31 +17,6 @@ env:
 script: make test-unit-ci
 jobs:
   include:
-    - stage: Check
-      name: Lint
-      script: make lint
-    - stage: Check
-      name: Types
-      script: make test-types
-
-    - stage: Unit Test
-      name: Coverage
-      addons:
-        chrome: stable
-      env: BROWSER=ChromeHeadlessCI REPORT_COVERAGE=true
-      script: make test-unit-cov-ci
-    - name: Chrome
-      env: BROWSER=Chrome
-      addons:
-        chrome: stable
-      services:
-        - xvfb
-    - name: Safari
-      env: BROWSER=BrowserStackSafari
-    - name: iOS 14
-      env: BROWSER=BrowserStackIos14
-    - name: iOS 13
-      env: BROWSER=BrowserStackIos13
 
     - &e2e
       stage: End-to-End Test
@@ -51,12 +26,6 @@ jobs:
     - <<: *e2e
       name: Safari
       env: BROWSER=BrowserStackSafari
-    - <<: *e2e
-      name: iOS 14
-      env: BROWSER=BrowserStackIos14
-    - <<: *e2e
-      name: iOS 13
-      env: BROWSER=BrowserStackIos13
 
     - stage: Publish
       name: Publish Artifacts
